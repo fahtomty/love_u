@@ -6,41 +6,43 @@
 <style>
  /* ===== الصوتيات ===== */
 
+/* ===== الصوتيات ===== */
+
 .audio-list {
   display: flex;
-  justify-content: center;   /* توسيط أفقي */
-  gap: 20px;
-  flex-wrap: wrap;           /* مهم للموبايل */
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
   width: 100%;
 }
 
 .audio-item {
   display: flex;
-  flex-direction: column;   /* الصوت فوق */
-  align-items: center;      /* توسيط */
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
 /* بوكس الصوت */
 .audio-box {
-  max-width: 420px;
+  max-width: 520px;
   background: #000;
   border-radius: 14px;
-  padding: 12px;
+  padding: 16px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
 }
 
 /* زر التشغيل */
 .play-btn {
-  width: 42px;
-  height: 42px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   background: #e11d48;
   border: none;
   color: #fff;
-  font-size: 18px;
+  font-size: 22px;
   cursor: pointer;
 }
 
@@ -51,41 +53,38 @@
 
 .progress input {
   width: 100%;
+  height: 6px;
   accent-color: #e11d48;
 }
 
 /* الوقت */
 .time {
-  font-size: 12px;
+  font-size: 14px;
   color: #fff;
   min-width: 40px;
   text-align: right;
 }
 
-/* النص تحت الصوت */
+/* الكلام تحت الصوت */
 .audio-text {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   color: #111;
-  margin-top: 8px;
-  text-align: center;
-  max-width: 280px;
+  margin-top: 12px;
+  max-width: 420px;
 }
 
 /* 📱 موبايل */
 @media (max-width: 768px) {
-  .audio-list {
-    flex-direction: column;
-    align-items: center;
+  .audio-box {
+    max-width: 100%;
+  }
+
+  .audio-text {
+    font-size: 18px;
   }
 }
- 
 
-body {
-  background:#fde7ee;
-  font-family: Arial, sans-serif;
-  padding:20px;
-}
 
 /* الكونتينر الأساسي */
 .media-row {
