@@ -4,14 +4,12 @@
 <meta charset="UTF-8">
 <title>For You ❤️</title>
 <style>
- /* ===== الصوتيات ===== */
-
-/* ===== الصوتيات ===== */
+/* ===== الصوتيات (حجم كبير) ===== */
 
 .audio-list {
   display: flex;
   justify-content: center;
-  gap: 24px;
+  gap: 32px;              /* مسافة أكبر */
   flex-wrap: wrap;
   width: 100%;
 }
@@ -25,24 +23,24 @@
 
 /* بوكس الصوت */
 .audio-box {
-  max-width: 520px;
+  max-width: 640px;       /* أكبر */
   background: #000;
-  border-radius: 14px;
-  padding: 16px;
+  border-radius: 18px;    /* أنعم */
+  padding: 22px;          /* أكبر */
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 18px;
 }
 
 /* زر التشغيل */
 .play-btn {
-  width: 52px;
-  height: 52px;
+  width: 64px;            /* أكبر بكتير */
+  height: 64px;
   border-radius: 50%;
   background: #e11d48;
   border: none;
   color: #fff;
-  font-size: 22px;
+  font-size: 28px;
   cursor: pointer;
 }
 
@@ -53,25 +51,26 @@
 
 .progress input {
   width: 100%;
-  height: 6px;
+  height: 8px;            /* أعرض */
   accent-color: #e11d48;
 }
 
 /* الوقت */
 .time {
-  font-size: 14px;
+  font-size: 16px;        /* أكبر */
   color: #fff;
-  min-width: 40px;
+  min-width: 50px;
   text-align: right;
 }
 
 /* الكلام تحت الصوت */
 .audio-text {
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 24px;        /* كبير وواضح */
+  font-weight: 700;
   color: #111;
-  margin-top: 12px;
-  max-width: 420px;
+  margin-top: 16px;
+  max-width: 520px;
+  line-height: 1.4;
 }
 
 /* 📱 موبايل */
@@ -80,8 +79,14 @@
     max-width: 100%;
   }
 
+  .play-btn {
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+  }
+
   .audio-text {
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 
