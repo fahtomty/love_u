@@ -233,32 +233,52 @@ img{
 </div>
 
 <script>
-document.querySelectorAll(".audio-box").forEach(box => {
-  const btn = box.querySelector(".play-btn");
-  const audio = box.querySelector("audio");
+document.querySelectorAll('.audio-box').forEach(box => {
+  const audio = box.querySelector('audio');
+  const playBtn = box.querySelector('.play-btn');
+  const progress = box.querySelector('input[type="range"]');
+  const time = box.querySelector('.time');
 
-  btn.addEventListener("click", () => {
-
-    // وقف أي صوت تاني
-    document.querySelectorAll("audio").forEach(a => {
-      if (a !== audio) a.pause();
-    });
-
-    document.querySelectorAll(".play-btn").forEach(b => {
-      if (b !== btn) b.textContent = "▶";
-    });
-
-    // تشغيل / إيقاف
+  /* تشغيل / إيقاف */
+  playBtn.addEventListener('click', () => {
     if (audio.paused) {
       audio.play();
-      btn.textContent = "⏸";
+      playBtn.textContent = '❚❚';
     } else {
       audio.pause();
-      btn.textContent = "▶";
+      playBtn.textContent = '▶';
     }
+  });
+
+  /* تحميل مدة الصوت */
+  audio.addEventListener('loadedmetadata', () => {
+    progress.max = audio.duration;
+  });
+
+  /* تحديث الشريط والوقت أثناء التشغيل */
+  audio.addEventListener('timeupdate', () => {
+    progress.value = audio.currentTime;
+
+    const minutes = Math.floor(audio.currentTime / 60);
+    const seconds = Math.floor(audio.currentTime % 60)
+      .toString()
+      .padStart(2, '0');
+
+    time.textContent = `${minutes}:${seconds}`;
+  });
+
+  /* ⬅️ هنا الحل المهم */
+  progress.addEventListener('input', () => {
+    audio.currentTime = progress.value;   // يكمّل من نفس المكان
+  });
+
+  /* عند انتهاء الصوت */
+  audio.addEventListener('ended', () => {
+    playBtn.textContent = '▶';
   });
 });
 </script>
+
 
  
 </body>
