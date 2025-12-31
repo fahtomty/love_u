@@ -131,23 +131,18 @@ img{
   <div class="time" id="time">0:00</div>
 
  <div class="audio-box">
-  <button class="play-btn" onclick="playAudio('audio1', this)">▶</button>
-  <input type="range" value="0">
-  <span class="time">0:00</span>
-  <audio id="audio1">
-    <source src="20.mp3" type="audio/mpeg">
+  <button class="play-btn" id="playBtn">▶</button>
+
+  <div class="progress">
+    <input type="range" id="progressBar" value="0">
+  </div>
+
+  <div class="time" id="time">0:00</div>
+
+  <audio id="audio">
+    <source src="audio.mp3" type="audio/mpeg">
   </audio>
 </div>
-
-<div class="audio-box">
-  <button class="play-btn" onclick="playAudio('audio2', this)">▶</button>
-  <input type="range" value="0">
-  <span class="time">0:00</span>
-  <audio id="audio2">
-    <source src="50.mp3" type="audio/mpeg">
-  </audio>
-</div>
-
 
 <div class="media-row">
 
