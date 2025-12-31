@@ -4,6 +4,13 @@
 <meta charset="UTF-8">
 <title>For You ❤️</title>
 <style>
+.audio-list {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;   /* مهم */
+  justify-content: flex-start;
+}
+
 body {
   background:#fde7ee;
   font-family: Arial, sans-serif;
@@ -125,23 +132,30 @@ img{
 
   <div class="audio-box">
     <button class="play-btn">▶</button>
+
     <div class="progress">
       <input type="range" value="0">
     </div>
+
     <div class="time">0:00</div>
+
     <audio src="20.mp3"></audio>
   </div>
 
   <div class="audio-box">
     <button class="play-btn">▶</button>
+
     <div class="progress">
       <input type="range" value="0">
     </div>
+
     <div class="time">0:00</div>
+
     <audio src="50.mp3"></audio>
   </div>
 
 </div>
+
 
 <div class="media-row">
 
@@ -176,21 +190,33 @@ img{
 </div>
 
 <script>
-function playAudio(id, btn) {
-  const audio = document.getElementById(id);
+document.querySelectorAll(".audio-box").forEach(box => {
+  const btn = box.querySelector(".play-btn");
+  const audio = box.querySelector("audio");
 
-  if (audio.paused) {
+  btn.addEventListener("click", () => {
+
+    // وقف أي صوت تاني
     document.querySelectorAll("audio").forEach(a => {
-      a.pause();
+      if (a !== audio) a.pause();
     });
-    audio.play();
-    btn.textContent = "⏸";
-  } else {
-    audio.pause();
-    btn.textContent = "▶";
-  }
-}
+
+    document.querySelectorAll(".play-btn").forEach(b => {
+      if (b !== btn) b.textContent = "▶";
+    });
+
+    // تشغيل / إيقاف
+    if (audio.paused) {
+      audio.play();
+      btn.textContent = "⏸";
+    } else {
+      audio.pause();
+      btn.textContent = "▶";
+    }
+  });
+});
 </script>
+
  
 </body>
 </html>
