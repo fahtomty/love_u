@@ -4,6 +4,25 @@
 <meta charset="UTF-8">
 <title>For You ❤️</title>
 <style>
+  .audio-list {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.audio-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.audio-text {
+  font-size: 14px;
+  color: #333;
+  margin-top: 6px;
+  text-align: center;
+}
+
 .audio-list {
   display: flex;
   gap: 12px;
@@ -130,31 +149,49 @@ img{
 
 <div class="audio-list">
 
-  <div class="audio-box">
-    <button class="play-btn">▶</button>
+  <div class="audio-item">
 
-    <div class="progress">
-      <input type="range" value="0">
+    <div class="audio-box">
+      <button class="play-btn">▶</button>
+
+      <div class="progress">
+        <input type="range" value="0">
+      </div>
+
+      <div class="time">0:00</div>
+
+      <audio src="20.mp3"></audio>
     </div>
 
-    <div class="time">0:00</div>
+    <div class="audio-text">
+     علي ما اعتقد يعني الاغنيه دي انتي بتحبيها
+    </div>
 
-    <audio src="20.mp3"></audio>
   </div>
 
-  <div class="audio-box">
-    <button class="play-btn">▶</button>
 
-    <div class="progress">
-      <input type="range" value="0">
+  <div class="audio-item">
+
+    <div class="audio-box">
+      <button class="play-btn">▶</button>
+
+      <div class="progress">
+        <input type="range" value="0">
+      </div>
+
+      <div class="time">0:00</div>
+
+      <audio src="50.mp3"></audio>
     </div>
 
-    <div class="time">0:00</div>
+    <div class="audio-text">   
+      اغنيه سمعتها منك حبيتها
+    </div>
 
-    <audio src="50.mp3"></audio>
   </div>
 
 </div>
+
 
 
 <div class="media-row">
