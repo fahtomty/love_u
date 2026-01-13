@@ -231,8 +231,20 @@ img{
   </div>
 
 </div>
+  <div style="text-align: center; margin-top: 20px;">
+    <button id="externalLinkBtn" style="padding: 12px 25px; background-color: #007bff; color: white; border: none; border-radius: 50px; cursor: pointer; font-weight: bold; font-size: 16px; box-shadow: 0 4px 15px rgba(0,123,255,0.3); transition: 0.3s;">
+        🔗 افتحي الهدية من هنا
+    </button>
+</div>
 
 <script>
+  // برمجة الزرار لفتح رابط خارجي في نافذة جديدة
+document.getElementById('externalLinkBtn').onclick = function() {
+    // حط اللينك بتاعك هنا مكان الـ https://example.com
+    const targetUrl = "https://example.com"; 
+    
+    window.open(targetUrl, '_blank'); 
+};
 document.querySelectorAll('.audio-box').forEach(box => {
   const audio = box.querySelector('audio');
   const playBtn = box.querySelector('.play-btn');
