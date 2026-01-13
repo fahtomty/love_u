@@ -152,7 +152,19 @@ img{
 <h2>كل سنه وانتي معايا كل سنه وانا جنبك كل سنه وانتي طيبه يا فطومتي مش عارف جوايا كلام كتير عايز اقولهولك بس مش عارف اطلعو بس اول مره عرفنا بعض فيها 14/6 مكناش متوقعين ان احنا نحب بعض أصلا او كدا او نكمل أصلا بس ادينا حبينا بعض و بقيتي عندي احلي كتكوته عايز اقولك مع أننا اتخانقنا كتيرررررررر بس بحب خناقاتنا و بحبك انتي كمان و الحمدالله عدينا من كل دا و دخلنا سنه جديده واحنا مع بعض و بنحب بعض و حبنا بيتجدد كل شويه ربنا يخليكي ليا يارب يا فطومتي و في الآخر كل سنه وانتي معايا سنه سعيده عليكي يارب تبقي سنه كلها خير عليكي و سنه كلها نجاح ليكي ان شاء الله يا حبي يارب اشوفك انجح و احسن واحده في الدنيا و بجد يا فاطومه بحبك اوي بجد بحبك و والله شويه ضغط و هيعودو ولا تحطي في بالك ونا بجد واثق انك قادرة تعدي الفترة دي بكل حاجه صعبه فيها ونا جمبك و في ضهرك خليكي واثقه من ده على قد ما هي صعبه على قد ما هتسهلك حاجات كتيرة و على قد ما هي خنيقه على قد منا واثق انك قدها ركزي في مستقبلك و حاولي كدا في دخول السنه الجديده تفرحي متشليش حاجه جواكي ولا تزعلي أبدا و عايزك تعرفي اني بجد مش بحب اشوف النونو بتاعي زعلان وبس يارب تكوني ام عيال و يجمعنا بيت واحد </h2>
 </div>
 
+<div id="newFullPage" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#ffffff; z-index:999999; overflow-y:auto; padding:20px; font-family: 'Cairo', sans-serif;">
+    
+    <button id="exitPage" style="padding:10px 20px; background:#ff4757; color:#fff; border:none; border-radius:10px; cursor:pointer; margin-bottom:20px;">رجوع</button>
 
+    <div style="max-width:800px; margin:0 auto; text-align:right; direction:rtl;">
+        <h1 style="color:#333;">أهلاً بيكي في صفحتنا الخاصة ❤️</h1>
+        <p style="font-size:1.2rem; line-height:1.8;">هنا تقدري تكتبي كل الكلام اللي إنتي عايزاه..</p>
+        
+        <video controls style="width:100%; border-radius:15px; margin-top:20px;">
+            <source src="your-video.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
   
 <div class="audio-list">
 
@@ -234,6 +246,27 @@ img{
 
 
 <script>
+
+  // 1. برمجة الزرار اللي في الـ Pop-up (الزرار الأزرق)
+document.getElementById('externalLinkBtn').onclick = function() {
+    // إخفاء الـ Pop-up الحالي
+    document.getElementById('mediaOverlay').style.display = 'none';
+    
+    // إظهار الصفحة الكاملة الجديدة
+    document.getElementById('newFullPage').style.display = 'block';
+    
+    // اختياري: إخفاء المشهد الـ 3D تماماً عشان الصفحة تبقى خفيفة
+    if(document.querySelector('canvas')) document.querySelector('canvas').style.display = 'none';
+};
+
+// 2. برمجة زرار الرجوع داخل الصفحة الجديدة
+document.getElementById('exitPage').onclick = function() {
+    // إخفاء الصفحة الجديدة
+    document.getElementById('newFullPage').style.display = 'none';
+    
+    // إرجاع المشهد الـ 3D
+    if(document.querySelector('canvas')) document.querySelector('canvas').style.display = 'block';
+};
 
 document.querySelectorAll('.audio-box').forEach(box => {
   const audio = box.querySelector('audio');
