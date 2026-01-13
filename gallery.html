@@ -2,39 +2,64 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ذكرياتنا الجميلة</title>
     <style>
-        body { background: #ffe6ef; font-family: Arial; padding: 20px; text-align: center; direction: rtl; }
-        .container { background: white; padding: 20px; border-radius: 20px; max-width: 800px; margin: auto; }
+        body { background: #ffe6ef; font-family: Arial, sans-serif; padding: 20px; text-align: center; direction: rtl; }
+        .container { background: white; padding: 20px; border-radius: 20px; max-width: 800px; margin: auto; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
         .back-btn { display: inline-block; margin-bottom: 20px; color: #e11d48; text-decoration: none; font-weight: bold; }
-        .gallery img, .gallery video { width: 100%; border-radius: 15px; margin-bottom: 20px; }
-        h1 { color: #e11d48; }
+        h1 { color: #e11d48; margin-bottom: 15px; }
+        p { line-height: 1.6; color: #444; margin-bottom: 30px; font-size: 1.1em; }
+
+        /* التعديل هنا: حاوية الفيديوهات */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* عمودين متساويين */
+            gap: 15px; /* مسافة بين الفيديوهات */
+            margin-top: 20px;
+        }
+
+        .video-grid video {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            background: #000;
+        }
+
+        /* تعديل للموبايل عشان الفيديوهات متبقاش صغيرة زيادة */
+        @media (max-width: 600px) {
+            .video-grid {
+                grid-template-columns: 1fr; /* فيديو واحد في الصف في الشاشات الصغيرة */
+            }
+        }
     </style>
 </head>
 <body>
-    <a href="index.html" class="back-btn">back button</a>
+
+    <a href="index.html" class="back-btn">← العودة للرئيسية</a>
+
     <div class="container">
-        <h1>قلت اعملك حاجه بسيطة يكن تفرحك ❤️</h1>
-        <p>حابب اقولك كام حاجه كدا اولا بحبك بحبك بجد و انتي اشطر الشاطرين كمان اه الامتحانات عدت بي صعوبه بس ربك مش بيضيع مجهود حد والله 
-الحمدلله انها عدت بي حلوها و مرها وانا كنت واثق فيك و دايما واثق فيكي انك تقدري تعملي اي حاجه في الدنيا دي ربنا يخليكي ليا و يخليكي في حياتي معرفش أنا بقول ايه كا المعتاد بس كل الي بيجي في دماغي بقولو عايز اقولك انك بجد من اغلي الناس في حياتي دخلتي خطفتيني بجد ربنا يحفظك و يسعدك يا فطومي يارب و يارب نتجوز في اقرب وقت و مش عارف اقول ايه صراحه بس بحبك يا كلب البحر و متعيطيششش علشان مزعلكيش و لو عايزه تعيطي عيطي معايا و بحبك بحبك بحبك كمان والله ربنا يديم فرحتك و ربنا يديم اي حاجه حلوه بتفرحك يعني حاولت اتكلم شويه تاني بحبك</p>
+        <h1>قلت اعملك حاجه بسيطة يمكن تفرحك ❤️</h1>
+        <p>حابب اقولك كام حاجه كدا اولا بحبك بحبك بجد و انتي اشطر الشاطرين كمان اه الامتحانات عدت بي صعوبه بس ربك مش بيضيع مجهود حد والله الحمدلله انها عدت بي حلوها و مرها وانا كنت واثق فيك و دايما واثق فيكي انك تقدري تعملي اي حاجه في الدنيا دي ربنا يخليكي ليا و يخليكي في حياتي معرفش أنا بقول ايه كا المعتاد بس كل الي بيجي في دماغي بقولو عايز اقولك انك بجد من اغلي الناس في حياتي دخلتي خطفتيني بجد ربنا يحفظك و يسعدك يا فطومي يارب و يارب نتجوز في اقرب وقت و مش عارف اقول ايه صراحه بس بحبك يا كلب البحر و متعيطيششش علشان مزعلكيش و لو عايزه تعيطي عيطي معايا و بحبك بحبك بحبك كمان والله ربنا يديم فرحتك و ربنا يديم اي حاجه حلوه بتفرحك يعني حاولت اتكلم شويه تاني بحبك</p>
         
-        <div class="gallery">
+        <div class="video-grid">
             <video controls>
                 <source src="video1.mp4" type="video/mp4">
             </video>
-        </div>
-        <div>
+
             <video controls>
                 <source src="vid.mp4" type="video/mp4">
-        </div>
-        <div>
+            </video>
+
             <video controls>
                 <source src="vid10.mp4" type="video/mp4">
-        </div>
-        <div>
+            </video>
+
             <video controls>
                 <source src="vid20.mp4" type="video/mp4">
+            </video>
         </div>
     </div>
+
 </body>
 </html>
